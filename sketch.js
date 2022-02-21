@@ -17,7 +17,11 @@ var cd1, cd2, cd3;
 var BG, bgImg;
 var counter;
 
+var imageSequence, sAnimation,sImg2,sImg3,sImg4;
+
 var gameState = 0;
+
+var play;
 
 function preload(){
   //Capasillos
@@ -39,6 +43,10 @@ function preload(){
 
   //Background
   bgImg = loadImage("assets/kitchen.jpg");
+
+  //Video Sequence
+  sAnimation = loadAnimation("assets/Cutscene/s1.png","assets/Cutscene/s1.png","assets/Cutscene/s1.png","assets/Cutscene/s1.png","assets/Cutscene/s2.png","assets/Cutscene/s2.png","assets/Cutscene/s2.png","assets/Cutscene/s2.png","assets/Cutscene/s3.png","assets/Cutscene/s3.png","assets/Cutscene/s3.png","assets/Cutscene/s3.png","assets/Cutscene/s3.png","assets/Cutscene/s4.png","assets/Cutscene/s4.png","assets/Cutscene/s4.png","assets/Cutscene/s4.png");
+  
 }
 
 function setup() {
@@ -49,10 +57,16 @@ function setup() {
 
   counter = createSprite(400,500,700,200);
 
+
+  play = new Play();
+
 }
 
 function draw() {
   background("Pink");
+  if(gameState === 0){
+    play.start()
+  }
 
 
 

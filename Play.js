@@ -3,6 +3,16 @@ class Play{
         
     }
     start(){
-     show   
+
+        imageSequence = createSprite(400, 300);
+        imageSequence.addAnimation("sequence", sAnimation);
+       
+
+        setTimeout(() => {
+            imageSequence.changeImage("second");
+        }, 3000);
+
+        console.log("animation")
+      
     }
 }
